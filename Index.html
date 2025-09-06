@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - College Student</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f9;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: #4a90e2;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      margin: 0;
+    }
+    .toggle-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: white;
+      color: #4a90e2;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .toggle-btn:hover {
+      background: #eee;
+    }
+    section {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: background 0.3s, color 0.3s;
+    }
+    h2 {
+      color: #4a90e2;
+    }
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+      border: 3px solid #4a90e2;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #4a90e2;
+      color: white;
+      margin-top: 20px;
+    }
+    a {
+      color: #4a90e2;
+      text-decoration: none;
+    }
+
+    /* 🌙 Dark Mode Styles */
+    body.dark {
+      background: #121212;
+      color: #f1f1f1;
+    }
+    body.dark section {
+      background: #1e1e1e;
+      box-shadow: 0 4px 10px rgba(255,255,255,0.1);
+    }
+    body.dark h2 {
+      color: #66c2ff;
+    }
+    body.dark a {
+      color: #66c2ff;
+    }
+    body.dark .toggle-btn {
+      background: #333;
+      color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hello, I'm Aditya Kumar Patel</h1>
+    <p>A College Student at Dr. Ghanshyam Singh P.G. College.</p>
+    <button class="toggle-btn" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </header>
+
+  <section>
+    <img src="AD_PHOTO.jpg" alt="Profile Picture" class="profile-pic">
+    
+    <h2>About Me</h2>
+    <p>
+      Hi! My name is Aditya Kumar Patel, and I’m currently pursuing a degree in 
+      <strong>BCA</strong> at <strong> Dr. Ghanshyam Singh P.G. College</strong>.  
+      I’m passionate about Technology, Coding, sports.
+    </p>
+
+    <h2>My Skills</h2>
+    <ul>
+      <li>Skill 1 Coding in C/Python/HTML/CSS/JavaScript/Dart</li>
+      <li>Skill 2 Deep Thinking</li>
+      <li>Skill 3 Gaming</li>
+    </ul>
+
+    <h2>Hobbies</h2>
+    <p>
+      Outside academics, I like playing Cricket, Batminton, Football :)
+    </p>
+
+    <h2>Contact</h2>
+    <p>
+      📷 instagram: <a href="https://www.instagram.com/almighty_great_aditya/" target="_blank">Instagram</a><br>
+      📧 Email: <a href="mailto:aditya007.g3@gmail.com">aditya007.g3@gmail.com</a> 
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Aditya Kumar Patel. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const btn = document.querySelector(".toggle-btn");
+
+    // 🔄 Load saved mode on page load
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark");
+      btn.textContent = "☀️ Light Mode";
+    }
+
+    function toggleDarkMode() {
+      body.classList.toggle("dark");
+      if (body.classList.contains("dark")) {
+        btn.textContent = "☀️ Light Mode";
+        localStorage.setItem("theme", "dark");
+      } else {
+        btn.textContent = "🌙 Dark Mode";
+        localStorage.setItem("theme", "light");
+      }
+    }
+  </script>
+
+</body>
+</html>
